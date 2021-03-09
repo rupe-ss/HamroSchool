@@ -6,8 +6,8 @@
 	
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link src="js/jquery.min.js">
-	<link src="js/bootstrap.min.js">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 
 </head>
 <body>
@@ -128,14 +128,18 @@
 					 {
 						$error[] = 'Email already exists.';
 					}
+
+					
 				}
+
+
 
 				if (!isset($error)) {
 					$date=date('y-m-d');
 					$options = array("cost"=>4);
 					$password= password_hash($password,PASSWORD_BCRYPT,$options);
 
-					$result = mysqli_query($dbc, "INSERT into users value('','$fname','$lname','$username','$email','$password','$date')");
+					$result = mysqli_query($dbc, "INSERT into users value('','$fname','$lname','$username','$email','$password','$usertype','$date')");
 
 					if($result)
 					{
@@ -204,6 +208,15 @@
 			  <div class="form-group">
 			    <label class="label_text" >Confirm Password</label>
 			    <input type="password" class="form-control" name="passwordConfirm" required="" >
+			  </div>
+			  <br>
+
+			   <div class="form-group">
+			    <label class="label_text" >User Type</label>
+			    <select name="usertype">
+			    	<option value="teacher">Teacher</option>
+			    	<option value="student">Student</option>
+			    </select>
 			  </div>
 			  <br>
 			  
