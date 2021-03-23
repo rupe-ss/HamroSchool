@@ -1,4 +1,10 @@
+<?php
+require_once("config.php");
 
+		$selectquery= "select * from tupload ";
+		$query=mysqli_query($dbc,$selectquery);
+
+		?>
 
 <!DOCTYPE html>
 <html>
@@ -28,29 +34,29 @@
   </thead>
   <tbody>
 
-		  	<?php
+		  	
 
-		require_once("config.php");
+		<?php    
 
-		$selectquery= "select * from tupload ";
-		$query=mysqli_query($dbc,$selectquery);
+	    while ($rows=mysqli_fetch_assoc($query))
+	    {
+	    	?>	
 
-		$nums= mysqli_num_rows($query);
-		// echo $nums;
 
-		$res=mysqli_fetch_array ($query);
-		while ($res=mysqli_fetch_array ($query)) {
-
-		?>
 
 		<tr class="text-center">
 	      
-	      <td><?php echo $res['username'];?></td>
-	      <td><?php echo $res['subject'];?></td>
-	      <td><?php echo $res['usertype'];?></td>
-	      <td><?php echo $res['upload_files'];?></td>
+	      <td><?php echo $rows['username'];?></td>
+	      <td><?php echo $rows['subject'];?></td>
+	      <td><?php echo $rows['usertype'];?></td>
+	      <td><?php echo $rows['upload_files'];?></td>
 	      
-	      <td><a href="download.php?sn=<?php echo $res['sn'] ?>" class="btn btn-primary">Download</td>
+	      
+
+	      <td><a href="download.php?upload=<?php echo $rows['upload_files'] ?>" class="btn btn-primary">Download</a></td>
+
+	    
+	    
 	    </tr>
 
 	    <?php

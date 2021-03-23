@@ -45,14 +45,7 @@
 			  </div>
 			  <br>
 
-			  <!--  <div class="form-group">
-			    <label class="label_text" >User Type</label>
-			    <select name="usertype">
-			    	<option value="none">None</option>
-			    	<option value="teacher">Teacher</option>
-			    	<option value="student">Student</option>
-			    </select>
-			  </div> -->    <!--aahile lai yo hide gareko login garda admin or user baata gar bhanyo bhane yaha bata milaune yo mileko chaina aahile-->
+			  
 
 			  
 			  <br>

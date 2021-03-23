@@ -4,7 +4,7 @@ if (isset($_POST['sublogin']))
  {
 	$login =$_POST['login_var'];
 	$password=$_POST['password'];
-	// $usertype=$_POST['usertype']; <!--yo mileko chaina-->
+	
 
 	$query="select * from users where (username='$login' OR email='$login')";
 	$res=mysqli_query($dbc,$query);

@@ -96,7 +96,7 @@
 
 					}
 					if ($password !=$passwordConfirm) {
-						$error[] = 'Password do not match';
+						$error[] = 'Password not match';
 					}
 
 					if (strlen($password)<8)
