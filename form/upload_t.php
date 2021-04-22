@@ -1,7 +1,7 @@
 <?php
 require_once("config.php");
 
-		$selectquery= "select * from tupload ";
+		$selectquery= "select * from tupload where usertype='teacher' ";
 		$query=mysqli_query($dbc,$selectquery);
 
 		?>
